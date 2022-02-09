@@ -22781,42 +22781,64 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _windowSize = require("./components/WindowSize");
 var _windowSizeDefault = parcelHelpers.interopDefault(_windowSize);
+var _mousePosition = require("./components/MousePosition");
+var _mousePositionDefault = parcelHelpers.interopDefault(_mousePosition);
 var _helpers = require("./helpers");
+var _form = require("./components/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
 var _s = $RefreshSig$();
 const App = ()=>{
     _s();
     const [w, h] = _helpers.useWindowSize();
+    const [x, y] = _helpers.useMousePosition();
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
                 children: [
                     "DIT IS ONZE APP(",
                     w,
-                    ",",
+                    "-",
                     h,
+                    "-",
+                    x,
+                    "-",
+                    y,
                     ")"
                 ]
             }, void 0, true, {
                 fileName: "src/App.jsx",
-                lineNumber: 7,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_windowSizeDefault.default, {
             }, void 0, false, {
                 fileName: "src/App.jsx",
-                lineNumber: 10,
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mousePositionDefault.default, {
+            }, void 0, false, {
+                fileName: "src/App.jsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default, {
+            }, void 0, false, {
+                fileName: "src/App.jsx",
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.jsx",
-        lineNumber: 6,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined));
 };
-_s(App, "++QsYZEZaQJZKTxgO+BWZ6LzsVc=", false, function() {
+_s(App, "V79uQTUYaDacXNOWdpalTSufN00=", false, function() {
     return [
-        _helpers.useWindowSize
+        _helpers.useWindowSize,
+        _helpers.useMousePosition
     ];
 });
 _c = App;
@@ -22829,7 +22851,133 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3","./components/WindowSize":"cK04q","./helpers":"ecN5O"}],"dOaw1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./components/WindowSize":"cK04q","./components/MousePosition":"9JWRy","./helpers":"ecN5O","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3","./components/Form":"ep7Rn"}],"cK04q":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$566d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$566d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _helpers = require("../helpers");
+var _s = $RefreshSig$();
+const WindowSize = ()=>{
+    _s();
+    const [w, h] = _helpers.useWindowSize();
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+        children: [
+            "width : ",
+            w,
+            " en height : ",
+            h
+        ]
+    }, void 0, true, {
+        fileName: "src/components/WindowSize.jsx",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined));
+};
+_s(WindowSize, "++QsYZEZaQJZKTxgO+BWZ6LzsVc=", false, function() {
+    return [
+        _helpers.useWindowSize
+    ];
+});
+_c = WindowSize;
+exports.default = WindowSize;
+var _c;
+$RefreshReg$(_c, "WindowSize");
+
+  $parcel$ReactRefreshHelpers$566d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../helpers":"ecN5O","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3"}],"ecN5O":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6b53 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6b53.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useWindowSize", ()=>useWindowSize
+);
+parcelHelpers.export(exports, "useField", ()=>useField
+);
+parcelHelpers.export(exports, "useMousePosition", ()=>useMousePosition
+);
+var _react = require("react");
+var _s = $RefreshSig$(), _s1 = $RefreshSig$(), _s2 = $RefreshSig$();
+function useWindowSize() {
+    _s();
+    const [windowSize, setWindowSize] = _react.useState({
+        width: undefined,
+        height: undefined
+    });
+    _react.useEffect(()=>{
+        const handleResize = ()=>{
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        };
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return ()=>window.removeEventListener("resize", handleResize)
+        ;
+    }, []);
+    return [
+        windowSize.width,
+        windowSize.height
+    ];
+}
+_s(useWindowSize, "c4qf3T3ntwaWr7rmXJcJwcTfMJk=");
+function useField(req) {
+    _s1();
+    const [value, setValue] = _react.useState("");
+    function onChange(e) {
+        setValue(e.target.value);
+    }
+    return {
+        value,
+        onChange
+    };
+}
+_s1(useField, "dBtK6I2q1m3rcfzPBa0nrbv/iCI=");
+function useMousePosition() {
+    _s2();
+    const [mousePosition, setMousePosition] = _react.useState({
+        x: undefined,
+        y: undefined
+    });
+    _react.useEffect(function() {
+        function handleMouseMove(e) {
+            setMousePosition({
+                x: e.clientX,
+                y: e.clientY
+            });
+        }
+        window.addEventListener("mousemove", handleMouseMove);
+        return function() {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
+    return [
+        mousePosition.x,
+        mousePosition.y
+    ];
+}
+_s2(useMousePosition, "XGlnC0tIrtIuqD6wZRm+MySudM0=");
+
+  $parcel$ReactRefreshHelpers$6b53.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3"}],"dOaw1":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22979,11 +23127,11 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"b8uOU"}],"cK04q":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$566d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react-refresh/runtime":"b8uOU"}],"9JWRy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0296 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$566d.prelude(module);
+$parcel$ReactRefreshHelpers$0296.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -22991,81 +23139,135 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _helpers = require("../helpers");
 var _s = $RefreshSig$();
-const WindowSize = ()=>{
+const MousePosition = ()=>{
     _s();
-    const [w, h] = _helpers.useWindowSize();
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-        children: [
-            "width : ",
-            w,
-            " en height : ",
-            h
-        ]
-    }, void 0, true, {
-        fileName: "src/components/WindowSize.jsx",
-        lineNumber: 6,
+    const [x, y] = _helpers.useMousePosition();
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: x || x === 0 && /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            children: [
+                "x: ",
+                x,
+                " en y: ",
+                y
+            ]
+        }, void 0, true, {
+            fileName: "src/components/MousePosition.jsx",
+            lineNumber: 10,
+            columnNumber: 11
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/MousePosition.jsx",
+        lineNumber: 7,
         columnNumber: 5
     }, undefined));
 };
-_s(WindowSize, "++QsYZEZaQJZKTxgO+BWZ6LzsVc=", false, function() {
+_s(MousePosition, "oUa5au7mhNB7ml28+JPbV2l9Bs0=", false, function() {
     return [
-        _helpers.useWindowSize
+        _helpers.useMousePosition
     ];
 });
-_c = WindowSize;
-exports.default = WindowSize;
+_c = MousePosition;
+exports.default = MousePosition;
 var _c;
-$RefreshReg$(_c, "WindowSize");
+$RefreshReg$(_c, "MousePosition");
 
-  $parcel$ReactRefreshHelpers$566d.postlude(module);
+  $parcel$ReactRefreshHelpers$0296.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3","../helpers":"ecN5O"}],"ecN5O":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6b53 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","../helpers":"ecN5O","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3"}],"ep7Rn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3d43 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6b53.prelude(module);
+$parcel$ReactRefreshHelpers$3d43.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useWindowSize", ()=>useWindowSize
-);
-var _react = require("react");
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _helpers = require("../helpers");
 var _s = $RefreshSig$();
-function useWindowSize() {
+const Form = ()=>{
     _s();
-    const [windowSize, setWindowSize] = _react.useState({
-        width: undefined,
-        height: undefined
-    });
-    _react.useEffect(function() {
-        function handleResize() {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight
-            });
-        }
-        window.addEventListener("resize", handleResize);
-        handleResize();
-        return function() {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    const nameField = _helpers.useField(true);
+    const ageField = _helpers.useField(false);
+    const cityField = _helpers.useField(false);
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                type: "text",
+                ...nameField
+            }, void 0, false, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
+            }, void 0, false, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                type: "text",
+                ...ageField
+            }, void 0, false, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
+            }, void 0, false, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                type: "text",
+                ...cityField
+            }, void 0, false, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                children: [
+                    nameField.value,
+                    " - ",
+                    ageField.value,
+                    " - ",
+                    cityField.value
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Form.jsx",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Form.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Form, "j0d3GH3ydvGu79TAtLemMFAIE38=", false, function() {
     return [
-        windowSize.width,
-        windowSize.height
+        _helpers.useField,
+        _helpers.useField,
+        _helpers.useField
     ];
-}
-_s(useWindowSize, "c4qf3T3ntwaWr7rmXJcJwcTfMJk=");
+});
+_c = Form;
+exports.default = Form;
+var _c;
+$RefreshReg$(_c, "Form");
 
-  $parcel$ReactRefreshHelpers$6b53.postlude(module);
+  $parcel$ReactRefreshHelpers$3d43.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3"}]},["il0p8","2LT2d","8lqZg"], "8lqZg", "parcelRequirec720")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"dOaw1","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gXFy3","../helpers":"ecN5O"}]},["il0p8","2LT2d","8lqZg"], "8lqZg", "parcelRequirec720")
 
 //# sourceMappingURL=index.975ef6c8.js.map
